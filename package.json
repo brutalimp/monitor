@@ -1,0 +1,16 @@
+{
+  "name": "monitor",
+  "version": "1.0.0",
+  "description": "一个简单的前端性能监控与错误监控库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "前端",
+    "性能监控",
+    "错误收集"
+  ],
+  "author": "https://github.com/brutalimp",
+  "license": "MIT"
+}

@@ -49,13 +49,23 @@ function monitorInit(url) {
   // 获取性能信息
   const getPerformance = () => {
     if (!window.performance) return;
-    const timing = window.performance.timing;
+    let timing = window.performance.timing;
+
+    // 优先使用 navigation v2  https://www.w3.org/TR/navigation-timing-2/
+    if (typeof window.PerformanceNavigationTiming === "function") {
+      try {
+        let nt2Timing = window.performance.getEntriesByType("navigation")[0];
+        if (nt2Timing) {
+          timing = nt2Timing;
+        }
+      } catch (err) {}
+    }
     const performance = {
       // 重定向耗时
       redirect: timing.redirectEnd - timing.redirectStart,
       // 白屏时间,
       whiteScreen: timing.domInteractive - timing.fetchStart,
-      // DOM 渲染耗时 
+      // DOM 渲染耗时
       dom: timing.domComplete - timing.domLoading,
       // 页面加载耗时（首屏时间）
       load: timing.loadEventEnd - timing.navigationStart,

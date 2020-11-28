@@ -1,7 +1,7 @@
 {
   "name": "monitor",
   "version": "1.0.0",
-  "description": "一个简单的前端性能监控与错误监控库",
+  "description": "一个简易的前端性能监控与错误捕捉脚本",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

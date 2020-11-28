@@ -56,9 +56,9 @@ function monitorInit(url) {
       // 白屏时间,
       // 需要在<head>标签的末尾增加 whiteScreen = new Date() - performance.timing.navigationStart
       //  whiteScreen: whiteScreen,
-      // DOM 渲染耗时
+      // DOM 渲染耗时 （白屏时间）
       dom: timing.domComplete - timing.domLoading,
-      // 页面加载耗时
+      // 页面加载耗时（首屏时间）
       load: timing.loadEventEnd - timing.navigationStart,
       // 页面卸载耗时
       unload: timing.unloadEventEnd - timing.unloadEventStart,
@@ -145,7 +145,7 @@ function monitorInit(url) {
       const target = e.target;
       if (target != window) {
         monitor.errors.push({
-          type: target.localName,
+          type: target.localName, // 标签名称
           url: target.src || target.href,
           msg: (target.src || target.href) + " is load error",
           // 错误发生的时间

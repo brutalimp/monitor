@@ -54,9 +54,8 @@ function monitorInit(url) {
       // 重定向耗时
       redirect: timing.redirectEnd - timing.redirectStart,
       // 白屏时间,
-      // 需要在<head>标签的末尾增加 whiteScreen = new Date() - performance.timing.navigationStart
-      //  whiteScreen: whiteScreen,
-      // DOM 渲染耗时 （白屏时间）
+      whiteScreen: timing.domInteractive - timing.fetchStart,
+      // DOM 渲染耗时 
       dom: timing.domComplete - timing.domLoading,
       // 页面加载耗时（首屏时间）
       load: timing.loadEventEnd - timing.navigationStart,

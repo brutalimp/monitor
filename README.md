@@ -1,9 +1,9 @@
-<h1 align="center">一个简易的前端性能监控与错误捕捉库</h1>
+<h1 align="center">一个简易的前端性能监控与错误捕捉脚本</h1>
 
 ### 本库基于知乎文章 https://zhuanlan.zhihu.com/p/82981365 所实现
 
 ## 描述
-- 本脚本是基于window.performence而实现的性能监控方法，可记录dom树渲染耗时（domcontentloaded）,页面加载耗时（onload), 页面请求总时长等。
+- 本脚本是基于window.performence而实现的性能监控方法，可记录dom树渲染耗时, 白屏耗时，首屏耗时, 页面请求总时长等。
 - 记录基于navigator的操作系统，浏览器等信息。
 - 资源加载错误，js执行错误，基于unhandledrejection事件的Promise异常错误。
 - 其他有用的信息可自己酌情添加。
